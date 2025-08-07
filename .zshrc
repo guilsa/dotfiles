@@ -1,22 +1,38 @@
 #
 # .zshrc
 #
+# @author Guilherme Sa
 # @author Jeff Geerling
 #
 
+# Guil's configuration ---
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+source $ZSH/oh-my-zsh.sh
+
+if [[ ":$FPATH:" != *":/Users/gui/completions:"* ]]; then export FPATH="/Users/gui/completions:$FPATH"; fi
+
+export EDITOR=vim
+export VISUAL="$EDITOR"
+# ---
+
+# [@Guil]: This conflicts with my preferred oh-my-zsh colors.
 # Colors.
-unset LSCOLORS
-export CLICOLOR=1
-export CLICOLOR_FORCE=1
+# unset LSCOLORS
+# export CLICOLOR=1
+# export CLICOLOR_FORCE=1
 
 # Don't require escaping globbing characters in zsh.
 unsetopt nomatch
 
+# [@Guil]: This is also nice (timelapse between commands)
+#          but it conflicts with my preferred oh-my-zsh UX.
 # Nicer prompt.
-export PS1=$'\n'"%F{green} %*%F %3~ %F{white}"$'\n'"$ "
+# export PS1=$'\n'"%F{green} %*%F %3~ %F{white}"$'\n'"$ "
 
 # Enable plugins.
-plugins=(git brew history kubectl history-substring-search)
+plugins=(git nvm brew history kubectl history-substring-search)
 
 # Custom $PATH with extra locations.
 export PATH=/opt/homebrew/bin:$HOME/Library/Python/3.12/bin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$PATH
@@ -46,7 +62,7 @@ bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
 # Git aliases.
-alias gs='git status'
+alias gst='git status' # [@Guil] updated
 alias gc='git commit'
 alias gp='git pull --rebase'
 alias gcam='git commit -am'
