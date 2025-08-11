@@ -62,11 +62,12 @@ bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
 # Git aliases.
-alias gst='git status' # [@Guil] updated
+alias gst='git status' # [@Guil] updated (was `gs`)
 alias gc='git commit'
 alias gp='git pull --rebase'
 alias gcam='git commit -am'
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias gco='git checkout' # [@Guil] added
 
 # Completions.
 autoload -Uz compinit && compinit
