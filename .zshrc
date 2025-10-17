@@ -160,3 +160,8 @@ export COMPOSER_MEMORY_LIMIT=-1
 # -----------------------------------------------------------------------------
 # END 
 # -----------------------------------------------------------------------------
+
+# Source machine-specific config if it exists
+if [[ -f ~/.zshrc.local ]]; then
+    source ~/.zshrc.local
+fi
