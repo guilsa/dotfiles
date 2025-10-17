@@ -1,24 +1,36 @@
 #
 # .zshrc
 #
+# -----------------------------------------------------------------------------
+# BEGIN
+# -----------------------------------------------------------------------------
 # @author Guilherme Sa
 # @author Jeff Geerling
 #
 
-# Guil's configuration ---
-# Path to your Oh My Zsh installation.
+# -----------------------------------------------------------------------------
+# BEGIN
+# Author: Guilherme Sa
+# Purpose: Oh My Zsh + personal env tweaks
+# Created: 2025-10-17
+# -----------------------------------------------------------------------------
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 source $ZSH/oh-my-zsh.sh
 
-if [[ ":$FPATH:" != *":/Users/gui/completions:"* ]]; then export FPATH="/Users/gui/completions:$FPATH"; fi
+if [[ ":$FPATH:" != *":/Users/gui/completions:"* ]]; then
+    export FPATH="/Users/gui/completions:$FPATH"
+fi
 
 export EDITOR=vim
 export VISUAL="$EDITOR"
-# ---
+# -----------------------------------------------------------------------------
+# END
+# -----------------------------------------------------------------------------
 
-# [@Guil]: This conflicts with my preferred oh-my-zsh colors.
-# Colors.
+# ORIGINAL (Jeff Geerling) color prefs — preserved but DISABLED by Guilherme Sa
+# Kept here for reference; these settings conflict with my preferred oh-my-zsh colors.
+# To restore the original author's behavior, uncomment the lines below.
 # unset LSCOLORS
 # export CLICOLOR=1
 # export CLICOLOR_FORCE=1
@@ -26,9 +38,9 @@ export VISUAL="$EDITOR"
 # Don't require escaping globbing characters in zsh.
 unsetopt nomatch
 
-# [@Guil]: This is also nice (timelapse between commands)
-#          but it conflicts with my preferred oh-my-zsh UX.
-# Nicer prompt.
+# ORIGINAL (Jeff Geerling) timelapse between commands — preserved but DISABLED by Guilherme Sa
+# Kept here for reference; this setting conflicts with my preferred oh-my-zsh usability.
+# To restore the original author's behavior, uncomment the lines below.
 # export PS1=$'\n'"%F{green} %*%F %3~ %F{white}"$'\n'"$ "
 
 # Enable plugins.
@@ -143,3 +155,8 @@ export COMPOSER_MEMORY_LIMIT=-1
 #}
 #shopt -s extdebug
 #trap prod_command_trap DEBUG
+
+# Universal configurations (version controlled)
+# -----------------------------------------------------------------------------
+# END 
+# -----------------------------------------------------------------------------
