@@ -1,0 +1,111 @@
+{
+	// Editor Experience
+	"editor.tabSize": 2,
+	"editor.insertSpaces": false,
+	"editor.wordWrap": "on",
+	"editor.formatOnSave": true,
+	"editor.minimap.enabled": false,
+	"editor.suggestSelection": "first", // Automatically select the first suggestion in IntelliSense
+	"editor.linkedEditing": true, // Auto-updates matching HTML/JSX tags
+	"editor.accessibilitySupport": "off", // Disable terminal sound
+
+	// Workbench
+	"workbench.colorTheme": "One Dark Pro",
+	"workbench.iconTheme": "file-icons",
+	"workbench.startupEditor": "newUntitledFile",
+	"workbench.editorAssociations": {
+		"*.ipynb": "jupyter-notebook"
+	},
+	"workbench.preferredHighContrastColorTheme": "Quiet Light",
+
+	// Files
+	"files.autoSave": "afterDelay",
+	"files.exclude": {
+		"yarn.lock": true
+	},
+	"files.watcherExclude": {
+		"**/node_modules/*/**": true,
+	},
+
+	// Search
+	"search.collapseResults": "alwaysCollapse",
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/bower_components": true,
+		"**/dist": true, // Common build output folder
+		"**/build": true, // Another common build output folder
+		"**/*.code-search": true,
+		"**/coverage": true // Coverage reports
+	},
+
+	// Terminal
+	"terminal.integrated.defaultProfile.osx": "zsh",
+	"terminal.integrated.enableVisualBell": false,
+
+	// Formatting - Prettier (using your preferences)
+	"prettier.semi": false,
+	"prettier.singleQuote": true,
+	"prettier.jsxSingleQuote": true, // Assuming you want this for JSX as well, consistent with singleQuote
+	"prettier.tabWidth": 2, // From your preferences
+	"prettier.useTabs": true, // From your preferences
+	"prettier.printWidth": 110, // Keeping this from your original settings
+
+	// Language Specific Settings
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[python]": {
+		"editor.rulers": [72]
+	},
+
+	// Extension Settings
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": false,
+		"markdown": true,
+		"scminput": false,
+		"javascript": true,
+		"javascriptreact": true
+	},
+	"oneDarkPro.editorTheme": "One Dark Pro", // Specific to this theme extension
+	"makefile.configureOnOpen": false,
+	"yaml.schemas": {
+		"file:///Users/gui/.vscode/extensions/continue.continue-1.2.8-darwin-arm64/config-yaml-schema.json": [
+			".continue/**/*.yaml"
+		]
+	},
+	"redhat.telemetry.enabled": false,
+
+	// Settings Sync
+	"settingsSync.ignoredSettings": [],
+	"settingsSync.ignoredExtensions": [
+		// test
+	],
+	"playwright.reuseBrowser": true,
+	"[dockercompose]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2,
+		"editor.autoIndent": "advanced",
+		"editor.quickSuggestions": {
+			"other": true,
+			"comments": false,
+			"strings": true
+		},
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	},
+	"[github-actions-workflow]": {
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	}
+}
