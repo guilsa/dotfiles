@@ -72,12 +72,12 @@
 
 	// Extension Settings
 	"github.copilot.enable": {
-		"*": true,
 		"plaintext": false,
 		"markdown": true,
 		"scminput": false,
 		"javascript": true,
-		"javascriptreact": true
+		"javascriptreact": true,
+		"*": false
 	},
 	"oneDarkPro.editorTheme": "One Dark Pro", // Specific to this theme extension
 	"makefile.configureOnOpen": false,
