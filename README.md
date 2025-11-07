@@ -4,6 +4,10 @@ I use an Ansible playbook to automate my Mac setup. Mapping back to this repo is
 
 Target machines must remember to manually git push/pull to keep this repo and dotfiles across machines up-to-date.
 
+# Required Manual Backup Reminder (Important)
+
+**Important:** This dotfiles repository contains a `.zshrc.local` file which is included in the `.gitignore`. Please remember to back up this file individually to Google Drive or Dropbox to avoid losing any personal configurations.
+
 ## VSCode User Settings
 
 Please remember to manually setup symlink:
