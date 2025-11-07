@@ -27,10 +27,6 @@ for dir in "$DEV_DIR"/*/; do
         repos_with_changes+=("$repo_name|$dir")
     fi
 
-    # Check for unsynced with remote
-    # Update remote refs first (silently)
-    git remote update >/dev/null 2>&1
-
     # Get the current branch
     current_branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
 
