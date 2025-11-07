@@ -165,3 +165,8 @@ export COMPOSER_MEMORY_LIMIT=-1
 if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/gui/.lmstudio/bin"
+# End of LM Studio CLI section
+
