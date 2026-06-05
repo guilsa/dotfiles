@@ -105,6 +105,17 @@ function gsync() {
  git push origin "$1"
 }
 
+# Amend the last commit, but only when a single file is modified.
+function gamd() {
+  local modified
+  modified=$(git status --porcelain | grep -c '^[^?]')
+  if [[ $modified -eq 1 ]]; then
+    git add . && git commit --amend
+  else
+    print -P "%F{red}Aborting (cannot continue because I see multiple files unstaged).%f"
+  fi
+}
+
 # Tell homebrew to not autoupdate every single time I run it (just once a week).
 export HOMEBREW_AUTO_UPDATE_SECS=604800
 
