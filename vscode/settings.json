@@ -7,26 +7,21 @@
 	"editor.minimap.enabled": false,
 	"editor.suggestSelection": "first", // Automatically select the first suggestion in IntelliSense
 	"editor.linkedEditing": true, // Auto-updates matching HTML/JSX tags
-	"editor.accessibilitySupport": "off", // Disable terminal sound
-
-	// Workbench
-	"workbench.colorTheme": "One Dark Pro",
+	"editor.accessibilitySupport": "off",
 	"workbench.iconTheme": "file-icons",
 	"workbench.startupEditor": "newUntitledFile",
 	"workbench.editorAssociations": {
-		"*.ipynb": "jupyter-notebook"
+		"*.copilotmd": "vscode.markdown.preview.editor",
+		"*.ipynb": "jupyter-notebook",
+		"*.csv": "default"
 	},
 	"workbench.preferredHighContrastColorTheme": "Quiet Light",
-
-	// Files
-	"files.autoSave": "afterDelay",
 	"files.exclude": {
 		"yarn.lock": true
 	},
 	"files.watcherExclude": {
-		"**/node_modules/*/**": true,
+		"**/node_modules/*/**": true
 	},
-
 	// Search
 	"search.collapseResults": "alwaysCollapse",
 	"search.exclude": {
@@ -37,11 +32,9 @@
 		"**/*.code-search": true,
 		"**/coverage": true // Coverage reports
 	},
-
 	// Terminal
 	"terminal.integrated.defaultProfile.osx": "zsh",
 	"terminal.integrated.enableVisualBell": false,
-
 	// Formatting - Prettier (using your preferences)
 	"prettier.semi": false,
 	"prettier.singleQuote": true,
@@ -49,14 +42,13 @@
 	"prettier.tabWidth": 2, // From your preferences
 	"prettier.useTabs": true, // From your preferences
 	"prettier.printWidth": 110, // Keeping this from your original settings
-
 	// Language Specific Settings
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[javascriptreact]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
-},
+	},
 	"[typescript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
@@ -67,9 +59,10 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[python]": {
-		"editor.rulers": [72]
+		"editor.rulers": [
+			72
+		]
 	},
-
 	// Extension Settings
 	"github.copilot.enable": {
 		"*": false,
@@ -78,7 +71,8 @@
 		"scminput": false,
 		"javascript": true,
 		"javascriptreact": true,
-		"shellscript": true
+		"shellscript": true,
+		"mdx": false
 	},
 	"oneDarkPro.editorTheme": "One Dark Pro", // Specific to this theme extension
 	"makefile.configureOnOpen": false,
@@ -88,7 +82,6 @@
 		]
 	},
 	"redhat.telemetry.enabled": false,
-
 	// Settings Sync
 	"settingsSync.ignoredSettings": [],
 	"settingsSync.ignoredExtensions": [
@@ -109,5 +102,13 @@
 	"[github-actions-workflow]": {
 		"editor.defaultFormatter": "redhat.vscode-yaml"
 	},
-	"claudeCode.useTerminal": true
+	"claudeCode.useTerminal": true,
+	"[dynamic csv]": {
+		"editor.inlayHints.maximumLength": 0
+	},
+	"git.blame.editorDecoration.enabled": true,
+	"window.confirmBeforeClose": "always",
+	"files.autoSave": "afterDelay",
+	"workbench.colorTheme": "One Dark Pro Darker",
+	"chat.disableAIFeatures": true
 }
