@@ -416,3 +416,14 @@ set tabstop=2
 set path+=**
 set wildignore+=*/node_modules/*,*/.git/*,*/target/*,*/dist/*,*/.venv*
 
+" <C-p> is a historical convention for "find/open file". Originally, Ctrl-P
+" meant "previous" in terminal/Emacs history, but Vim plugins like CtrlP and
+" later fzf popularized it as the file-finder keybinding. We keep the same key
+" here for familiarity and easy migration to a fuzzy finder later.
+" Hold Ctrl, press p
+nnoremap <C-p> :find<Space>
+
+nnoremap <leader>q :botright copen<CR>
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprev<CR>
+
