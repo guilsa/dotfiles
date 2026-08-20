@@ -427,3 +427,6 @@ nnoremap <leader>q :botright copen<CR>
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprev<CR>
 
+" enable project-local .vimrc config
+set exrc
+set secure
