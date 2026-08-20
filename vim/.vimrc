@@ -402,3 +402,9 @@ set number
 " Use the macOS clipboard for normal yanks, deletes, and pastes
 set clipboard=unnamed
 
+let g:netrw_banner = 0
+let g:netrw_listbanner = 3
+let g:netrw_browser_split = 4
+let g:netrw_altv = 1
+nnoremap <leader>e :Explore<CR>
+
