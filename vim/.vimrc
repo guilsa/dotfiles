@@ -408,3 +408,7 @@ let g:netrw_browser_split = 4
 let g:netrw_altv = 1
 nnoremap <leader>e :Explore<CR>
 
+" dont like indent 4, prefer 2
+set shiftwidth=2
+set tabstop=2
+
