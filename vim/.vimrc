@@ -48,6 +48,9 @@ let mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" Insert the current date, e.g. Aug 20, 2026
+nnoremap <leader>d O<C-r>=substitute(strftime('%b %d, %Y'), ' 0', ' ', '')<CR><Esc>o
+
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
