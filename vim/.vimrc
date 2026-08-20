@@ -412,3 +412,7 @@ nnoremap <leader>e :Explore<CR>
 set shiftwidth=2
 set tabstop=2
 
+" use find recursively 
+set path+=**
+set wildignore+=*/node_modules/*,*/.git/*,*/target/*,*/dist/*,*/.venv*
+
