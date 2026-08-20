@@ -398,3 +398,7 @@ endfunction
 
 " Show line numbers
 set number
+
+" Use the macOS clipboard for normal yanks, deletes, and pastes
+set clipboard=unnamed
+
