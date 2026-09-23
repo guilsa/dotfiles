@@ -4,9 +4,33 @@ I use an Ansible playbook to automate my Mac setup. Mapping back to this repo is
 
 Target machines must remember to manually git push/pull to keep this repo and dotfiles across machines up-to-date.
 
-# Required Manual Backup Reminder (Important)
+## Zsh aliases
 
-**Important:** This dotfiles repository contains a `.zshrc.local` file which is included in the `.gitignore`. Please remember to back up this file individually to Google Drive or Dropbox to avoid losing any personal configurations.
+Install the shared aliases with:
+
+```bash
+stow -t ~ zsh
+```
+
+The machine's `~/.zshrc` must load them:
+
+```zsh
+[[ -r ~/.aliases ]] && source ~/.aliases
+```
+
+## Shell configuration
+
+Keep shared, non-sensitive shell config in this repository. Keep machine-specific or installer-managed config in the untracked `~/.zshrc.local`. Near the end of `~/.zshrc`, load the local file after shared config:
+
+```zsh
+[[ -r ~/.zshrc.local ]] && source ~/.zshrc.local
+```
+
+Given installers can be unpredictable, review changes they make to either file. Move portable, non-sensitive settings into a tracked file in this repository, such as `.zshrc` or `zsh/.aliases`. Re-check that the local-file source line remains near the end after installer updates.
+
+## Public repository
+
+Never commit credentials, API keys, private hosts, or other secrets. Keep machine-specific settings in ignored local files.
 
 ## VSCode User Settings
 

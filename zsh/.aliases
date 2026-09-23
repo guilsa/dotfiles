@@ -1,0 +1,21 @@
+# Shared shell aliases.
+
+# Navigation.
+alias dev='cd -- "$HOME/dev"'
+alias youtube='cd -- "$HOME/Downloads/youtube.com"'
+alias tasks='cd -- "$HOME/Documents/Tasks"'
+alias notes='cd -- "$HOME/Documents/Notes"'
+alias screenshots='cd -- "$HOME/Screenshots"'
+alias proxmox='cd -- "$HOME/dev/proxmox"'
+alias guilsa='cd -- "$HOME/dev/guilsa.com"'
+alias dotfiles='cd -- "$HOME/dev/dotfiles"'
+alias resume='cd -- "$HOME/dev/my-resume"'
+alias userscripts='cd -- "$HOME/dev/userscripts"'
+
+# Git.
+alias gst='git status'
+alias gc='git commit'
+alias gp='git pull --rebase'
+alias gcam='git commit -am'
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias gco='git checkout'
