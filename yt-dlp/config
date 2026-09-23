@@ -1,0 +1,4 @@
+# Please make a ~/.yt-dlp/ folder and symlink this config there
+
+# Save all videos under YouTube directory in your home directory
+-o /Users/gui/downloads/youtube.com/%(title)s.%(ext)s
