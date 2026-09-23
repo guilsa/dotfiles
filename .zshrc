@@ -16,6 +16,7 @@
 # -----------------------------------------------------------------------------
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
+plugins=(git nvm brew history kubectl history-substring-search web-search)
 source $ZSH/oh-my-zsh.sh
 
 if [[ ":$FPATH:" != *":/Users/gui/completions:"* ]]; then
@@ -24,6 +25,7 @@ fi
 
 export EDITOR=vim
 export VISUAL="$EDITOR"
+setopt HIST_IGNORE_SPACE # Commands prefixed with a space aren't saved to history
 # -----------------------------------------------------------------------------
 # END
 # -----------------------------------------------------------------------------
@@ -42,9 +44,6 @@ unsetopt nomatch
 # Kept here for reference; this setting conflicts with my preferred oh-my-zsh usability.
 # To restore the original author's behavior, uncomment the lines below.
 # export PS1=$'\n'"%F{green} %*%F %3~ %F{white}"$'\n'"$ "
-
-# Enable plugins.
-plugins=(git nvm brew history kubectl history-substring-search)
 
 # Custom $PATH with extra locations.
 export PATH=/opt/homebrew/bin:$HOME/Library/Python/3.12/bin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$PATH
