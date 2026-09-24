@@ -28,6 +28,10 @@ Keep shared, non-sensitive shell config in this repository. Keep machine-specifi
 
 Given installers can be unpredictable, review changes they make to either file. Move portable, non-sensitive settings into a tracked file in this repository, such as `.zshrc` or `zsh/.aliases`. Re-check that the local-file source line remains near the end after installer updates.
 
+With Oh My Zsh's `brew` plugin enabled, Homebrew provides formula completions in its `share/zsh/site-functions` directory and Oh My Zsh adds that directory to `fpath`. `~/.zsh/completions` is for manually installed completions, such as Deno's `_deno.zsh`; the shared `.zshrc` includes it only when the directory exists.
+
+The shared `.zshrc` also retains these optional utility functions: `gsync`, `gamd`, `dockrun`, `denter`, and `knownrm`.
+
 ## Public repository
 
 Never commit credentials, API keys, private hosts, or other secrets. Keep machine-specific settings in ignored local files.
