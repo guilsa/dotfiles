@@ -18,6 +18,14 @@ The machine's `~/.zshrc` must load them:
 [[ -r ~/.aliases ]] && source ~/.aliases
 ```
 
+## yt-dlp
+
+Install the yt-dlp config with:
+
+```bash
+stow -t ~/.config/yt-dlp yt-dlp
+```
+
 ## Shell configuration
 
 Keep shared, non-sensitive shell config in this repository. Keep machine-specific or installer-managed config in the untracked `~/.zshrc.local`. Near the end of `~/.zshrc`, load the local file after shared config:

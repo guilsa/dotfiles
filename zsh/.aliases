@@ -11,6 +11,7 @@ alias guilsa='cd -- "$HOME/dev/guilsa.com"'
 alias dotfiles='cd -- "$HOME/dev/dotfiles"'
 alias resume='cd -- "$HOME/dev/my-resume"'
 alias userscripts='cd -- "$HOME/dev/userscripts"'
+alias pairshare='cd -- "$HOME/dev/textmarker-revamped/version_b"'
 
 # Git.
 alias gst='git status'
