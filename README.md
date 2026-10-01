@@ -18,6 +18,8 @@ The machine's `~/.zshrc` must load them:
 [[ -r ~/.aliases ]] && source ~/.aliases
 ```
 
+Use `addcd name` from a directory to preview a new `cd` alias, or `addcd name ~/path` to choose a directory. Press Enter to stop after the preview; answer `y` to add the alias, commit it, and push it. The directory must be under your home directory, and the preview shows the exact line that will go into this public repository.
+
 ## yt-dlp
 
 Install the yt-dlp config with:

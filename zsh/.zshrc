@@ -79,6 +79,76 @@ then
   source ~/.aliases
 fi
 
+# Preview a directory alias, then optionally publish it.
+addcd() {
+  emulate -L zsh
+
+  if (( $# < 1 || $# > 2 )) || [[ ! "$1" =~ '^[a-zA-Z][a-zA-Z0-9_-]*$' ]]; then
+    print -u2 'Usage: addcd <alias-name> [directory]'
+    return 2
+  fi
+
+  local alias_name="$1" directory="${2:-$PWD}" home_dir="${HOME:A}"
+  local alias_file="$HOME/.aliases" resolved_file repo relative command line answer
+
+  if [[ ! -d "$directory" ]]; then
+    print -u2 -- "Directory does not exist: $directory"
+    return 1
+  fi
+  directory="${directory:A}"
+  if [[ "$directory" != "$home_dir" && "$directory" != "$home_dir"/* ]]; then
+    print -u2 'Only directories under $HOME can be published as portable aliases.'
+    return 1
+  fi
+
+  resolved_file="${alias_file:A}"
+  repo="$(git -C "${resolved_file:h}" rev-parse --show-toplevel 2>/dev/null)"
+  if [[ -z "$repo" || "$resolved_file" != "$repo/zsh/.aliases" ]]; then
+    print -u2 'Expected ~/.aliases to link to this dotfiles repository.'
+    return 1
+  fi
+  if whence -w -- "$alias_name" >/dev/null 2>&1 ||
+     grep -Eq "^alias ${alias_name}=" "$resolved_file"; then
+    print -u2 -- "Name is already in use: $alias_name"
+    return 1
+  fi
+
+  if [[ "$directory" == "$home_dir" ]]; then
+    command='cd -- "$HOME"'
+  else
+    relative="${directory#"$home_dir"/}"
+    command="cd -- \$HOME/${(q)relative}"
+  fi
+  line="alias ${alias_name}=${(qq)command}"
+
+  print -r -- "$line"
+  print -r -- 'This will be committed and pushed to the public dotfiles repository.'
+  printf 'Add, commit, and push? [y/N] '
+  read -r answer || return 1
+  if [[ "$answer" != [Yy] ]]; then
+    print 'No changes made.'
+    return 0
+  fi
+
+  if ! git -C "$repo" diff --quiet -- zsh/.aliases ||
+     ! git -C "$repo" diff --cached --quiet -- zsh/.aliases; then
+    print -u2 'The alias file has uncommitted changes; review those first.'
+    return 1
+  fi
+  git -C "$repo" pull --ff-only || return 1
+  if grep -Eq "^alias ${alias_name}=" "$resolved_file"; then
+    print -u2 -- "Alias was added elsewhere: $alias_name"
+    return 1
+  fi
+
+  print -r -- "$line" >> "$resolved_file" || return 1
+  git -C "$repo" add -- zsh/.aliases || return 1
+  git -C "$repo" commit -m "Add ${alias_name} directory alias" -- zsh/.aliases || return 1
+  git -C "$repo" push || return 1
+  alias "$alias_name=$command"
+  print -r -- "Ready: $alias_name"
+}
+
 # Case-insensitive completion.
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 
