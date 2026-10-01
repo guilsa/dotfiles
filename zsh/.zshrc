@@ -20,6 +20,27 @@ plugins=(git nvm brew history kubectl history-substring-search web-search)
 [[ -d "$HOME/.zsh/completions" ]] && fpath=("$HOME/.zsh/completions" $fpath)
 source $ZSH/oh-my-zsh.sh
 
+
+# -----------------------------------------------------------------------------
+# BEGIN
+# LESS/MAN HIGHLIGHTING IMPROVEMENTS
+
+# Let less display ANSI colors
+export LESS='-R'
+export MANPAGER='less -R'
+
+# man page styling
+export LESS_TERMCAP_md=$'\e[1;36m'   # bold → bright cyan
+export LESS_TERMCAP_me=$'\e[0m'      # end bold
+
+export LESS_TERMCAP_us=$'\e[1;32m'   # underline → bright green
+export LESS_TERMCAP_ue=$'\e[0m'      # end underline
+
+export LESS_TERMCAP_so=$'\e[1;33;44m' # standout/search → yellow on blue
+export LESS_TERMCAP_se=$'\e[0m'       # end standout
+# END
+# -----------------------------------------------------------------------------
+
 export EDITOR=vim
 export VISUAL="$EDITOR"
 setopt HIST_IGNORE_SPACE # Commands prefixed with a space aren't saved to history
