@@ -22,3 +22,4 @@ alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %
 alias gco='git checkout'
 alias people='cd -- $HOME/Documents/People'
 alias can-delete='cd -- $HOME/Documents/can-delete'
+alias documents='cd -- $HOME/Documents'
